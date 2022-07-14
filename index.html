@@ -1,0 +1,20 @@
+<!-- Take user value, bind it, display it dynamically -->
+
+<!doctype html>
+<html ng-app>
+
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+</head>
+
+<body ng-app="">
+    <form action="">
+        <input type="text" ng-model="un" >
+        {{un}}
+        </input>
+    </form>
+    <p ng-bind="un"></p>
+</body>
+
+</html>
