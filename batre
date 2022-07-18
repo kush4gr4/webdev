@@ -1,0 +1,40 @@
+<!-- 
+
+<!doctype html>
+<html>
+
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="" ng-init="myText='Kushagra Sharma!'">
+    
+    <h1>{{myText}}</h1>
+    
+
+</body>
+
+</html> -->
+
+<!--  -->
+
+<!doctype html>
+<html>
+
+<head>
+    <title>My AngularJS App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="" ng-init= "values= ['230', '110' , '20' , '30'] ">
+        <ol>
+            <li ng-repeat="i in values"> {{i}} </li>
+        </ol>
+    </div>
+
+</body>
+
+</html>
