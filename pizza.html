@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Number of people in Pizza Hut</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app = "Pizza">
+
+        <div id="Instructions">
+            Toggle welcome message <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+            
+            <div ng-if="myVar">
+                <h1>Welcome</h1>
+                <p>Since this is your first day at pizza hut, we have built this tutorial for you</p>
+                <hr>
+            </div>
+        </div>
+
+        <div id="Number-of-people" ng-controller="myCtrl">
+            Toggle TASK1: <input type="checkbox" ng-model="myVar">
+            <div ng-show="myVar">
+                <h2>TASK 1: Everytime someone opens the door to Pizza Hut, press the button</h2>
+            </div>
+
+            <p></p>
+            <img src="pizza_hut.jpg" alt="Pizza Hut store photo">
+            <p></p>
+
+            <button ng-click="myFunc()">Someone just entered!</button>
+            <p>Number of people that entered Pizza Hut, since the morning is: {{count}}</p>
+        </div>
+        
+        Hide TASK2: <input type="checkbox" ng-model="myVar">
+        
+        <div ng-hide="myVar">
+            <h2>
+                TASK 2: Keep focus on this textbox!
+            </h2>
+
+            <div id="Straying-from-work">
+                <input ng-blur="count = count + 1" ng-init="count=0" />
+                <p>You have strayed from your work {{count}} times
+                <p> back to work if you are to get paid!</p>
+                <!-- get back to work prompter -->
+                <script>
+                    if (count == 5) {
+                        prompt('Get back to work')
+                    }
+                </script>
+            </div>
+        </div>
+
+
+        <script>
+            // ng-click
+            angular.module('Pizza', [])
+                .controller('myCtrl', ['$scope', function ($scope) {
+                    $scope.count = 0;
+                    $scope.myFunc = function () {
+                        $scope.count++;
+                    };
+                }]);
+                
+            // Plays audio onclick
+            const audio = new Audio("bell.wav");
+                const buttons = document.querySelectorAll("button");
+
+                buttons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        audio.play();
+                    });
+                });
+            
+            // 
+        </script>         
+
+    </div>
+</body>
+
+</html>
