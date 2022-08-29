@@ -1,39 +1,16 @@
-<!-- 
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
-<head>
-    <title>My AngularJS App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
-</head>
-
 <body>
-    <div ng-app="" ng-init="myText='Kushagra Sharma!'">
-    
-    <h1>{{myText}}</h1>
-    
 
-</body>
+    <h2>Create a JSON string from a JavaScript object.</h2>
+    <p id="demo"></p>
 
-</html> -->
-
-<!--  -->
-
-<!doctype html>
-<html>
-
-<head>
-    <title>My AngularJS App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
-</head>
-
-<body>
-    <div ng-app="" ng-init= "values= ['230', '110' , '20' , '30'] ">
-        <ol>
-            <li ng-repeat="i in values"> {{i}} </li>
-        </ol>
-    </div>
+    <script>
+        const obj = { name: "John", age: 30, city: "New York" };
+        const myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+    </script>
 
 </body>
 
